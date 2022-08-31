@@ -1,0 +1,21 @@
+{
+  "ActionName":"ActionName Example 2",
+  "ActionResultName":"ActionResultName Example",
+  "ActorUserId":"ActorUserId Example",
+  "ActorApplicationId":"ActorApplicationId Example",
+  "ActorStation":"ActorStation Example",
+  "AutomationIndicator":false,
+  "BenefitClaimTypeCode":"BenefitClaimTypeCode Example",
+  "ClaimId":10,
+  "ContentionClassificationName":"ContentionClassificationName Example",
+  "ContentionId":1,
+  "ContentionStatusTypeCode":"ContentionStatusTypeCode Example",
+  "ContentionTypeCode":"ContentionTypeCode Example",
+  "CurrentLifecycleStatus":"CurrentLifecycleStatus Example",
+  "DateAdded":0,
+  "Details":"Details Example",
+  "DiagnosticTypeCode":"DiagnosticTypeCode Example",
+  "EventTime":0,
+  "JournalStatusTypeCode":"JournalStatusTypeCode Example",
+  "VeteranParticipantId":1
+}

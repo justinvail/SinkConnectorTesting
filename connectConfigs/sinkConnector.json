@@ -1,0 +1,28 @@
+{
+  "name": "sink_local_contention-event-base_contention-event-latest",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "errors.tolerance": "all",
+    "errors.log.enable": "true",
+    "errors.log.include.messages": "true",
+    "topics":"local-contention-event-base",
+    "connection.url": "jdbc:oracle:thin:@host.docker.internal:1521/xe",
+    "connection.user": "sys as sysdba",
+    "connection.password": "welcome1",
+    "dialect.name": "OracleDatabaseDialect",
+    "quote.sql.identifiers":"never",
+    "connection.attempts": "150",
+    "connection.backoff.ms": "15000",
+    "insert.mode": "upsert",
+    "table.name.format": "VBMSUI.CONTENTION_EVENT_LATEST",
+    "pk.mode": "record_value",
+    "pk.fields": "ContentionId",
+    "auto.create": "false",
+    "auto.evolve": "false",
+    "value.converter.schema.registry.url": "http://schema-registry:8081",
+    "value.converter.schemas.enable": "true",
+    "key.converter.schema.registry.url": "http://schema-registry:8081"
+  }
+}

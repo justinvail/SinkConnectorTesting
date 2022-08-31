@@ -1,0 +1,21 @@
+{
+  "ActionName":"ActionName Update",
+  "ActionResultName":"ActionResultName Update",
+  "ActorUserId":"ActorUserId Update",
+  "ActorApplicationId":"ActorApplicationId Update",
+  "ActorStation":"ActorStation Update",
+  "AutomationIndicator":true,
+  "BenefitClaimTypeCode":"BenefitClaimTypeCode Update",
+  "ClaimId":700000,
+  "ContentionClassificationName":"ContentionClassificationName Update",
+  "ContentionId":1,
+  "ContentionStatusTypeCode":"ContentionStatusTypeCode Update",
+  "ContentionTypeCode":"ContentionTypeCode Update",
+  "CurrentLifecycleStatus":"CurrentLifecycleStatus Update",
+  "DateAdded":16619,
+  "Details":"Details Update",
+  "DiagnosticTypeCode":"DiagnosticTypeCode Update",
+  "EventTime":16619,
+  "JournalStatusTypeCode":"JournalStatusTypeCode Update",
+  "VeteranParticipantId":123456789
+}

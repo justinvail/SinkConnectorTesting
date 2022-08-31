@@ -1,0 +1,22 @@
+CREATE TABLE VBMSUI.CONTENTION_EVENT_LATEST (
+    ActionName VARCHAR(255),
+    ActionResultName VARCHAR(255),
+    ActorUserId VARCHAR(255),
+    ActorApplicationId VARCHAR(255),
+    ActorStation VARCHAR(255),
+    AutomationIndicator NUMBER(1),
+    BenefitClaimTypeCode VARCHAR(255),
+    ClaimId NUMBER(18),
+    ContentionClassificationName VARCHAR(255),
+    ContentionId NUMBER(18),
+    ContentionStatusTypeCode VARCHAR(255),
+    ContentionTypeCode VARCHAR(255),
+    CurrentLifecycleStatus VARCHAR(255),
+    DATEAdded DATE,
+    Details VARCHAR(255),
+    DiagnosticTypeCode VARCHAR(255),
+    EventTime DATE,
+    JournalStatusTypeCode VARCHAR(255),
+    VeteranParticipantId NUMBER(18),
+    CONSTRAINT pk_contention_id PRIMARY KEY(ContentionId)
+);

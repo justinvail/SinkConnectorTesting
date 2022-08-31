@@ -1,0 +1,103 @@
+{
+  "name":"ContentionEventBase",
+  "type":"record",
+  "namespace":"gov.va.bip.events.claim.contention",
+  "fields":[
+    {
+      "name": "ActionName",
+      "default": "null",
+      "type": "string"
+    },
+    {
+      "name": "ActionResultName",
+      "default": "null",
+      "type": "string"
+    },
+    {
+      "name": "ActorUserId",
+      "default": "null",
+      "type": "string"
+    },
+    {
+      "name": "ActorApplicationId",
+      "default": "null",
+      "type": "string"
+    },
+    {
+      "name": "ActorStation",
+      "default": "null",
+      "type": "string"
+    },
+    {
+      "name": "AutomationIndicator",
+      "type": "boolean"
+    },
+    {
+      "name":"BenefitClaimTypeCode",
+      "type":"string"
+    },
+    {
+      "name":"ClaimId",
+      "type":"long"
+    },
+    {
+      "name":"ContentionClassificationName",
+      "default": "null",
+      "type":"string"
+    },
+    {
+      "name":"ContentionId",
+      "type":"long"
+    },
+    {
+      "name":"ContentionStatusTypeCode",
+      "type":"string"
+    },
+    {
+      "name":"ContentionTypeCode",
+      "type":"string"
+    },
+    {
+      "name":"CurrentLifecycleStatus",
+      "default": "null",
+      "type":"string"
+    },
+    {
+      "name":"DateAdded",
+      "type":
+      {
+        "type": "int",
+        "connect.version": 1,
+        "connect.name": "org.apache.kafka.connect.data.Date",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "Details",
+      "default": "null",
+      "type": "string"
+    },
+    {
+      "name":"DiagnosticTypeCode",
+      "type":"string"
+    },
+    {
+      "name": "EventTime",
+      "type":
+      {
+        "type": "int",
+        "connect.version": 1,
+        "connect.name": "org.apache.kafka.connect.data.Date",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name":"JournalStatusTypeCode",
+      "type":"string"
+    },
+    {
+      "name":"VeteranParticipantId",
+      "type":"long"
+    }
+  ]
+}
