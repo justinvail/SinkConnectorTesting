@@ -10,16 +10,16 @@ schema loaded in schema registry, and avro messages being produced to the topic.
 test less than 30 lines of [sink connector configuration](./connectConfigs/sinkConnector.json).  So, hopefully this will
 be useful to others that find themselves in a holding pattern waiting for topics to materialize.  This allows us to use 
 the avro schema as a contract and work out the entire database portion (sink connector configuration and database 
-structure). This will allow any work relying on the database data/structure to continue without impediment. 
+structure). This will allow any work relying on the database data and/or database structure to continue without impediment. 
 
 This repository does the following:
 - Sets up a local kafka environment in docker.  This includes:
   - ZooKeeper
   - Kafka
-  - Confluent Command Center
+  - Confluent Command Center (c3)
   - Schema Registry
   - Kafka Connect
-  - and a temp container to set up the single topic we are testing
+  - and a temporary container to set up the topic(s) we are testing
 - It also has shell scripts that:
   - read json files representing data for messages (not yet in avro format)
   - converts json payload to binary avro
@@ -30,23 +30,23 @@ This repository does the following:
 
 ## Prerequisites
 #### Docker
-This testing suite makes heavy use of docker containers using docker-compose.
+This testing suite makes heavy use of docker containers via docker-compose.
 #### Command line tools 
-There are some prerequisites for running these scripts.  If you are using a Mac and using Brew, you can run the 
+There are some prerequisites for running these scripts.  If you are using a Mac and using [Brew](https://brew.sh/), you can run the 
 [installMacPrereqs script](./shellScripts/installMacPrereqs.sh) to install all of them.  The command line tools are: 
 - avro-tools
 - jq
 - kcat
 #### Database
-The whole point of Kafka sink connector is to off load the data somewhere (usually a database).  In this test, we are 
+The whole point of Kafka sink connectors is to off load the data somewhere (usually a database).  In this test, we are 
 sinking the data into the local vbms database that is running in docker.  The ***connection.url***, ***connection.user***, 
 and ***connection.password*** in the [sink configuration](./connectConfigs/sinkConnector.json) is already setup for the 
 local VBMS DB.  However, we still need to create a table that matches the [schema](./schemas/ContentionEventBase.avsc).    
 That create table statement is [createContentionEventLatest.sql](./sql/createContentionEventLatest.sql)
 
 ## How to use
-Once you have the prerequisites, all you need to do is run the [startAll script](./shellScripts/startAll.sh).    
-The script will describe what it is doing in real time.  Once complete, you can check the output. 
+Once you have the prerequisites set up, all you need to do is run the [startAll script](./shellScripts/startAll.sh).    
+The script will describe what it is doing in real time.  Once complete, you can check the output in kafka and the database. 
 
 ## Verifying results
 Once the [startAll script](./shellScripts/startAll.sh) is run, you can verify the results.  This is done in three 
@@ -68,23 +68,25 @@ configuration as needed.
 ![Overview](readMeImages/c3Overview.png)
 #### On the ***Topics*** page, you will see all the active topics in Kafka.  Click on our topic: ***local-contention-event-base***
 ![Topics](readMeImages/c3Topics.png)
-#### This is the topic overview.  From here, we can either ***Messages*** or ***Schema***   
+#### This is the topic overview.  From here, we can either click ***Messages*** or ***Schema***   
 ![Topic](readMeImages/c3Topic.png)
 #### If we clicked ***Messages***, we will see the messages.  Use the ***Jump to offset*** feature to find your messages.  For our purposes, an offset of 0 is perfect. 
 ![Topic Messages](readMeImages/c3TopicMessages.png)
 #### If we clicked ***Schema***, we can review our schema to ensure it was added to the schema registry correctly.
 ![Topic Schema](readMeImages/c3TopicSchema.png)
 
-## Shutting down kafka
-Using the [stopAll script](./shellScripts/stopAll.sh) will shutdown the containers via docker-compose.
+## Shutting down Kafka
+Use the [stopAll script](./shellScripts/stopAll.sh) to shut down the containers via docker-compose.
 
 ## Multiple Runs
-The [startAll script](./shellScripts/startAll.sh) restarts everything in docker.  The only state held is in the database. 
+The [startAll script](./shellScripts/startAll.sh) restarts everything in docker, even if your local kafka environment
+Is already running.  If you local kafka environment is running, the startAll script stops it before doing the normal 
+startAll procedures.  The only state held is in the database. 
 You may want to truncate the table between runs depending on your use case. 
 
 ## Different sink connectors
 This repo can be forked and adjusted for other sink connector types.  Please keep in mind that the volume mount in the 
-connect contain may need to change based on your connector type.  Like wise the [jdbcConnect](./jdbcConnect) folder may 
+Connect container may need to change based on your connector type.  Like wise the [jdbcConnect](./jdbcConnect) folder may 
 also need updated.  Finally, the [sink connector configuration](./connectConfigs/sinkConnector.json) will need to be
 updated as well. 
 
