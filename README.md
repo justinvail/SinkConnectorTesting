@@ -86,8 +86,8 @@ You may want to truncate the table between runs depending on your use case.
 
 ## Different sink connectors
 This repo can be forked and adjusted for other sink connector types.  Please keep in mind that the volume mount in the 
-Connect container may need to change based on your connector type.  Like wise the [jdbcConnect](./connectMount) folder may 
-also need updated.  Finally, the [sink connector configuration](./connectConfigs/sinkConnector.json) will need to be
+Connect container may need to change based on your connector type.  Like wise the [connectMount](./connectMount) folder may 
+also need updates.  Finally, the [sink connector configuration](./connectConfigs/sinkConnector.json) will need to be
 updated as well. 
 
 ## Adjusting the json connector configuration for different environments
