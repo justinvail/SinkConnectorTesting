@@ -12,7 +12,7 @@ CREATE TABLE VBMSUI.CONTENTION_EVENT_LATEST (
     ContentionStatusTypeCode VARCHAR(255),
     ContentionTypeCode VARCHAR(255),
     CurrentLifecycleStatus VARCHAR(255),
-    DATEAdded DATE,
+    DateAdded DATE,
     Details VARCHAR(255),
     DiagnosticTypeCode VARCHAR(255),
     EventTime DATE,
