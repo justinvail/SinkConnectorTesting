@@ -1,7 +1,7 @@
 {
   "name":"ContentionEventBase",
   "type":"record",
-  "namespace":"gov.va.bip.events.claim.contention",
+  "namespace":"gov.va.bip.bie.schema.base.claim.contention",
   "fields":[
     {
       "name": "ActionName",
@@ -85,10 +85,10 @@
       "name": "EventTime",
       "type":
       {
-        "type": "int",
+        "type": "long",
         "connect.version": 1,
-        "connect.name": "org.apache.kafka.connect.data.Date",
-        "logicalType": "date"
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "logicalType": "timestamp-millis"
       }
     },
     {

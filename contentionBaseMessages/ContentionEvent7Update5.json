@@ -12,10 +12,10 @@
   "ContentionStatusTypeCode":"ContentionStatusTypeCode Update",
   "ContentionTypeCode":"ContentionTypeCode Update",
   "CurrentLifecycleStatus":"CurrentLifecycleStatus Update",
-  "DateAdded":16645,
+  "DateAdded":16619,
   "Details":"Details Update",
   "DiagnosticTypeCode":"DiagnosticTypeCode Update",
-  "EventTime":16645,
+  "EventTime":1662488973000,
   "JournalStatusTypeCode":"JournalStatusTypeCode Update",
   "VeteranParticipantId":987654321
 }
