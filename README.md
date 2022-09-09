@@ -1,6 +1,6 @@
 # SinkConnectorTesting
 
-## Why would I use this? 
+## Repo Purpose
 This repository was created to aid in testing Kafka sink connector configurations.  The current implementation is
 based around a jdbc Oracle sink connector for ContentionEventBase.avsc messages.  The schema can be found [here](https://github.com/department-of-veterans-affairs/bip-bie-schema/blob/development/src/main/resources/avro/event-base/ContentionEventBase.avsc
 as well as an internal copy [here](./schemas/ContentionEventBase.avsc).
