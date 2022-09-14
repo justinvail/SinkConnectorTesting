@@ -42,7 +42,7 @@ The whole point of Kafka sink connectors is to off load the data somewhere (usua
 sinking the data into the local vbms database that is running in docker.  The ***connection.url***, ***connection.user***, 
 and ***connection.password*** in the [sink configuration](./connectConfigs/sinkConnector.json) is already setup for the 
 local VBMS DB.  However, we still need to create a table that matches the [schema](./schemas/ContentionEventBase.avsc).    
-That create table statement is [createContentionEventLatest.sql](./sql/createContentionEventLatest.sql)
+You will also need a new user and role with CRUD permissions on that table.  That SQL can be found here: [createUserAndRoleAndTable.sql](./sql/createUserAndRoleAndTable.sql)
 
 ## How to use
 Once you have the prerequisites set up, all you need to do is run the [startAll script](./shellScripts/startAll.sh).    
