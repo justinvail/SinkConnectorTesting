@@ -804,44 +804,20 @@ BEGIN
             FOR contention IN 1.. random_contention_count_for_claim
                 LOOP
                     INSERT
-                    INTO VBMSUI.CONTENTION_EVENT_LATEST (ActionName,
-                                                         ActionResultName,
-                                                         ActorUserId,
-                                                         ActorApplicationId,
-                                                         ActorStation,
-                                                         AutomationIndicator,
-                                                         BenefitClaimTypeCode,
+                    INTO VBMSUI.CONTENTION_EVENT_LATEST (AutomationIndicator,
                                                          ClaimId,
                                                          ContentionClassificationName,
                                                          ContentionId,
-                                                         ContentionStatusTypeCode,
                                                          ContentionTypeCode,
                                                          CurrentLifecycleStatus,
-                                                         DateAdded,
-                                                         Details,
-                                                         DiagnosticTypeCode,
-                                                         EventTime,
-                                                         JournalStatusTypeCode,
-                                                         VeteranParticipantId)
-                    VALUES ('ActionName',
-                            'ActionResultName',
-                            'ActorUserId',
-                            'ActorApplicationId',
-                            'ActorStation',
-                            floor(dbms_random.value(0, 2)),
-                            'BenefitClaimTypeCode',
+                                                         EventTime)
+                    VALUES (floor(dbms_random.value(0, 2)),
                             claim.claim_id,
                             'ContentionClassificationName',
                             contention_count,
-                            'ContentionStatusTypeCode',
                             contention_codes(floor(dbms_random.value(1, 761))),
                             contention_statuses(floor(dbms_random.value(1, 15))),
-                            CURRENT_DATE,
-                            'Details',
-                            'DiagnosticTypeCode',
-                            CURRENT_TIMESTAMP,
-                            'JournalStatusTypeCode',
-                            floor(dbms_random.value(0, 100000)));
+                            CURRENT_TIMESTAMP);
 
                     contention_count := contention_count + 1;
                 END LOOP;

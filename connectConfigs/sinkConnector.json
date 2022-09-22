@@ -21,6 +21,7 @@
     "pk.fields": "ContentionId",
     "auto.create": "false",
     "auto.evolve": "false",
+    "fields.whitelist": "AutomationIndicator, ClaimId, ContentionClassificationName, ContentionId, ContentionTypeCode, CurrentLifecycleStatus, EventTime",
     "value.converter.schema.registry.url": "http://schema-registry:8081",
     "value.converter.schemas.enable": "true",
     "key.converter.schema.registry.url": "http://schema-registry:8081"
