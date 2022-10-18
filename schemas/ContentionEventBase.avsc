@@ -61,6 +61,14 @@
       "type":"long"
     },
     {
+      "name": "ContentionClassificationId",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
       "name":"ContentionClassificationName",
       "type": [
         "null",
@@ -97,6 +105,14 @@
       "default": null
     },
     {
+      "name": "CurrentTimestamp",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
       "name":"DateAdded",
       "type": [
         "null",
@@ -106,6 +122,40 @@
           "connect.name": "org.apache.kafka.connect.data.Date",
           "logicalType": "date"
         }
+      ],
+      "default": null
+    },
+    {
+      "name": "DateCompleted",
+      "type": [
+        "null",
+        {
+          "type": "int",
+          "connect.version": 1,
+          "connect.name": "org.apache.kafka.connect.data.Date",
+          "logicalType": "date"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name":"DateUpdated",
+      "type": [
+        "null",
+        {
+          "type": "int",
+          "connect.version": 1,
+          "connect.name": "org.apache.kafka.connect.data.Date",
+          "logicalType": "date"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "Description",
+      "type": [
+        "null",
+        "string"
       ],
       "default": null
     },
@@ -139,7 +189,7 @@
       "default": null
     },
     {
-      "name":"JournalStatusTypeCode",
+      "name": "FieldsUpdated",
       "type": [
         "null",
         "string"
@@ -147,10 +197,10 @@
       "default": null
     },
     {
-      "name":"VeteranParticipantId",
+      "name":"JournalStatusTypeCode",
       "type": [
         "null",
-        "long"
+        "string"
       ],
       "default": null
     },
@@ -163,7 +213,7 @@
       "default": null
     },
     {
-      "name": "CurrentTimestamp",
+      "name":"VeteranParticipantId",
       "type": [
         "null",
         "long"
